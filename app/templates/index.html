@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    <!--    <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="static/css/resources/ol.css">
+        <link rel="stylesheet" href="static/css/resources/ol3-layerswitcher.css">
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .header{
+           background-color: rgb(234, 195, 120);
+           padding: 20px;
+           text-align: right 
+        }
+        .leftcolumn{
+            float: left;
+            width: 80%;
+            height: 20cm;
+            background-color: rgb(226, 255, 121);
+        }
+        .rightcolumn{
+            float:right;
+            text-align: right;
+            width: 20%;
+            height: 20cm;
+            background-color: rgb(226, 255, 121);
+        }
+        .footer{
+            background-color:  rgb(234, 195, 120);
+            text-align: right;
+            padding: 10px;
+        }
+        </style>
+        <style>
+        #map {
+            width: 100%; 
+            height: 16cm;
+        }
+        </style>
+        <title>Landbook</title>
+    </head>
+    <body>
+    <div class="header">
+        <h2>Landbook</h2>
+    </div>
+    <div class ="leftcolumn">
+        
+        <p>check protected areas and soil-type within range</p>
+        
+       
+    <!--WFS-Tool-----------------------------------------------------------------------------------------    
+        <DIV id="customControl" onload="initWFSTransactions()">
+                <input type="button" id="customControlSave" value="save" onclick="updateFeature()"/>
+        </DIV>
+    ---------------------------------------------------------------------------------------------------->
+<br>
+            <div id="map">
+                <div id="popup" class="ol-popup">
+                    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                    <div id="popup-content"></div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="rightcolumn">
+                <br><br><br><br>
+                <h4>Data-Source</h4>
+                <p>Soil-Data powered by 
+                <a href="http://data.isric.org/geonetwork/srv/eng/catalog.search#/home" >ISRIC</a><br><br>
+                <a href="https://www.protectedplanet.net">The World Database on Protected Areas (WDPA)</a> 
+                </p>
+					 <h4>Map-Functions</h4>
+                <div id='Radius'>
+                        <p>Radius: <select id="radius">
+                            <option value="0.1">~11 km</option>
+                            <option value="0.2">~22 km</option>
+                            <option value="1">~111 km</option>
+                        </select></p>
+                    </div>
+                    <button onclick="reset_map()">reset map</button>
+                    <script>
+                    function reset_map() {
+                        console.log("reset-button clicked");
+                        $.getJSON({
+                        url: `/reset/`,
+                        success: data => {
+                        console.log(data);
+                        location.reload();
+                        }
+                        })   
+                    };    
+        					</script>
+        </div>
+        <div class="footer">
+            <p>heads up!</p>
+        </div>
+        
+
+        <script src="static/js/resources/expressions.js"></script>
+        <script src="static/js/resources/polyfills.js"></script>
+       <!-- <script src="static/js/resources/functions.js"></script> -->
+        <script src="static/js/resources/ol-debug.js"></script>
+        <script src="static/js/resources/ol3-layerswitcher.js"></script>
+        
+        <script src="static/js/layers/layers.js" type="text/javascript"></script> 
+        <script src="static/js/resources/core.js"></script>
+        <script src="static/js/resources/Autolinker.min.js"></script>
+        <script src="static/js/resources/jquery.min.js"></script>
+
+        <script>
+        // get Radius
+        var getRadius = function(){
+            return parseFloat($("#radius").val());
+        }
+        console.log(getRadius())
+
+        //get Coords
+        map.on('pointermove', function(evt) {
+            if (evt.dragging){
+                return;
+            }
+        });
+
+        
+       
+        </script>
+
+
+    </body>
+</html>
