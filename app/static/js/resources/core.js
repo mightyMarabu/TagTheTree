@@ -23,7 +23,9 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1
+         maxZoom: 28, minZoom: 1,
+         center: [801375.9870938924,6667005.787300707],
+         zoom: 14
     })
 });
 
@@ -51,6 +53,6 @@ map.on("singleclick", (e) => {
 });
 
 
-map.getView().fit([2200000, 200000, 6200000, 800000], map.getSize());
-var NO_POPUP = 0
-var ALL_FIELDS = 1
+//map.getView().fit([1,1,2,2], map.getSize());
+//var NO_POPUP = 0
+//var ALL_FIELDS = 1
