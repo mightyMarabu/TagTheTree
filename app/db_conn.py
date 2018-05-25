@@ -13,18 +13,18 @@ radius = 0.5
 
 #conn_str = psycopg2.connect(dbname='postgres', user='postgres', host='192.168.70.134', port='54322', password='postgres')"
 
-def insert_into_db(function = "landbook.insert_data", params=(lat, lng, radius)):
-    connect = psycopg2.connect(dbname='postgres', user='postgres', host='163.172.133.143', port='32779', password='postgres')
+def insert_into_db(function = "ttt.insert_data", params=(lat, lng, radius)):
+    connect = psycopg2.connect(dbname='wupperForst', user='postgres', host='163.172.133.143', port='32771', password='postgres')
     cur = connect.cursor()
-    cur.execute("select landbook.insert_data(%s,%s,%s)", params)
+    cur.execute("select ttt.insert_data(%s,%s,%s)", params)
     connect.commit()
     connect.close()
     print ("processing.... refresh map.")
 
-def resetMap(function = "landbook.reset_rawdata"):
-    connect = psycopg2.connect(dbname='postgres', user='postgres', host='163.172.133.143', port='32779', password='postgres')
+def resetMap(function = "ttt.reset_rawdata"):
+    connect = psycopg2.connect(dbname='wupperForst', user='postgres', host='163.172.133.143', port='32771', password='postgres')
     cur = connect.cursor()
-    cur.execute("select landbook.reset_rawdata()")
+    cur.execute("select ttt.reset_rawdata()")
     connect.commit()
     connect.close()
     print ("start by zero")

@@ -16,7 +16,7 @@ def submit():
 
 @app.route("/save/<lat>/<lng>/<radius>")
 def savePoint(lat, lng, radius):
-    sub = insert_into_db("landbook.insert_data", (lat,lng,radius))
+    sub = insert_into_db("ttt.insert_data", (lat,lng,radius))
     return jsonify("data submitted!")
 
 #@app.route("/reset/")
@@ -34,5 +34,5 @@ def reset():
 #    return Response(json.dumps(res), mimetype = "application/json")
 
 if __name__ == "__main__":
-#    app.run(debug = True)
+    app.run(debug = True)
     app.run(host='0.0.0.0', port=80)
