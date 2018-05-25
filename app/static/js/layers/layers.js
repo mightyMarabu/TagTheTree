@@ -13,14 +13,14 @@ new ol.layer.Tile({
 
 var lyrSites = new ol.layer.Tile({
   source: new ol.source.TileWMS(({
-    url: "http://163.172.133.143:32780/geoserver/landbook/wms?",
+    url: "http://163.172.133.143:32772/geoserver/Forst/wms?",
 attributions: [new ol.Attribution({html: '<a href=""></a>'})],
     params: {
       "LAYERS": "reg_point",
       "TILED": "true",
       "VERSION": "1.3.0"},
   })),
-  title: "requested Sites",
+  title: "tagged trees",
   opacity: 1.000000,
   
   
