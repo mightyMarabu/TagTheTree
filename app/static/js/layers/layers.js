@@ -30,7 +30,7 @@ wms_layers.push([lyrSites, 0]);
 
 var lyrForstNRW = new ol.layer.Tile({
   source: new ol.source.TileWMS(({
-    url: "http://163.172.133.143:32780/geoserver/Forst/wms?",
+    url: "http://163.172.133.143:32772/geoserver/Forst/wms?",
 attributions: [new ol.Attribution({html: '<a href=""></a>'})],
     params: {
       "LAYERS": "Forstamtsgrenzen_NRW",
@@ -127,7 +127,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
                 
               });
   wms_layers.push([lyrBuffer_result_3, 0]);
-*/
+
   /********************WFS*****************
   var vectorSource = new ol.source.Vector({
     format: new ol.format.GeoJSON(),
