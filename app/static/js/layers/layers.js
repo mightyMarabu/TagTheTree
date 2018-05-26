@@ -28,23 +28,23 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
 wms_layers.push([lyrSites, 0]);
 
 
-var lyrSoilKenya = new ol.layer.Tile({
+var lyrForstNRW = new ol.layer.Tile({
   source: new ol.source.TileWMS(({
-    url: "http://163.172.133.143:32780/geoserver/landbook/wms?",
+    url: "http://163.172.133.143:32780/geoserver/Forst/wms?",
 attributions: [new ol.Attribution({html: '<a href=""></a>'})],
     params: {
-      "LAYERS": "soil_sotwis_ken",
+      "LAYERS": "Forstamtsgrenzen_NRW",
       "TILED": "true",
       "VERSION": "1.3.0"},
   })),
-  title: "Soil Kenya",
+  title: "Forstamtsgrenzen",
   opacity: 1.000000,
   
   
 });
-wms_layers.push([lyrSoilKenya, 0]);
+wms_layers.push([lyrForstNRW, 0]);
 
-
+/*
 var lyrProtectedAreas = new ol.layer.Tile({
                             source: new ol.source.TileWMS(({
                               url: "http://163.172.133.143:32780/geoserver/landbook/wms?",
@@ -109,7 +109,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
                 
               });
   wms_layers.push([lyrSumArea_result_2, 0]);
-
+*/
             
 
 var lyrBuffer_result_3 = new ol.layer.Tile({
@@ -152,7 +152,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
   });
 */
 
-lyrSites.setVisible(true);lyrSoilKenya.setVisible(false);lyrProtectedAreas.setVisible(false);lyrArea_result_1.setVisible(true);lyrArea_result_2.setVisible(true);
+lyrSites.setVisible(true);lyrForstNRW.setVisible(false);//lyrProtectedAreas.setVisible(false);lyrArea_result_1.setVisible(true);lyrArea_result_2.setVisible(true);
 //lyrSumArea_result_2.setVisible(false);lyrBuffer_result_3.setVisible(true);vector.setVisible(true);
 
-var layersList = [baseLayer,lyrSoilKenya,lyrProtectedAreas,lyrArea_result_1,lyrArea_result_2,lyrSites,];
+var layersList = [baseLayer,lyrForstNRW,lyrSites,];
