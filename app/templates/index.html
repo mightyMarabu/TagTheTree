@@ -13,25 +13,25 @@
             background-color: #ffffff;
         }
         .header{
-           background-color: rgb(234, 195, 120);
+           background-color: rgb(117, 117, 117);
            padding: 20px;
            text-align: right 
         }
         .leftcolumn{
             float: left;
-            width: 80%;
-            height: 20cm;
-            background-color: rgb(226, 255, 121);
+            width: 100%;
+            height: 80%;
+            background-color: rgb(255, 255, 255);
         }
         .rightcolumn{
             float:right;
             text-align: right;
-            width: 20%;
-            height: 20cm;
+            width: 0%;
+            height: 80%;
             background-color: rgb(226, 255, 121);
         }
         .footer{
-            background-color:  rgb(234, 195, 120);
+            background-color:  rgb(117, 117, 117);
             text-align: right;
             padding: 10px;
         }
@@ -50,8 +50,7 @@
     </div>
     <div class ="leftcolumn">
         
-        <p>Gefahrbaummarkierung</p>
-        
+                
        
     <!--WFS-Tool-----------------------------------------------------------------------------------------    
         <DIV id="customControl" onload="initWFSTransactions()">
@@ -66,11 +65,7 @@
                 </div>
             </div>
         
-        </div>
-        
-        <div class="rightcolumn">
-                <br><br><br><br>
-                <h4>getting started:</h4>
+            <h4>getting started:</h4>
                 <p>Makiere den Standort eines Baumes durch klicken auf die Karte</p>
 					 <h4>Kartenfunktionen</h4>
                 <div id='Radius'>
@@ -79,8 +74,9 @@
                             <option value="0.2">~22 km</option>
                             <option value="1">~111 km</option>
                         </select></p>
-                    </div>
-                    <button onclick="reset_map()">reset map</button>
+                </div>
+                    
+                <button onclick="reset_map()">reset map</button>
                     <script>
                     function reset_map() {
                         console.log("reset-button clicked");
@@ -92,7 +88,14 @@
                         }
                         })   
                     };    
-        					</script>
+        			</script>
+
+
+        </div>
+        
+        <div class="rightcolumn">
+                <br><br><br><br>
+                
         </div>
         <div class="footer">
             <p>heads up!</p>
