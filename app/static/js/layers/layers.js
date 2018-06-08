@@ -38,7 +38,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
       "VERSION": "1.3.0"},
   })),
   title: "Forstamtsgrenzen",
-  opacity: 1.000000,
+  opacity: 0.500000,
   
   
 });
@@ -111,7 +111,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
   wms_layers.push([lyrSumArea_result_2, 0]);
 */
             
-
+/*
 var lyrBuffer_result_3 = new ol.layer.Tile({
                 source: new ol.source.TileWMS(({
                   url: "http://192.168.70.134:32769/geoserver/France/wms?",
@@ -127,7 +127,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
                 
               });
   wms_layers.push([lyrBuffer_result_3, 0]);
-
+*/
   /********************WFS*****************
   var vectorSource = new ol.source.Vector({
     format: new ol.format.GeoJSON(),
