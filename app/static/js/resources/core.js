@@ -34,6 +34,7 @@ map.addControl(layerSwitcher);
 layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
+/* raus wegen draw test*/
 map.on("singleclick", (e) => {
     console.log("clicked");
     var xy = ol.proj.transform(e.coordinate, "EPSG:3857", "EPSG:4326");
@@ -56,3 +57,4 @@ map.on("singleclick", (e) => {
 //map.getView().fit([1,1,2,2], map.getSize());
 //var NO_POPUP = 0
 //var ALL_FIELDS = 1
+
