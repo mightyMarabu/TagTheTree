@@ -39,7 +39,7 @@
         <style>
         #map {
             width: 100%; 
-            height: 50%;
+            height: 30%;
         }
         </style>
         <title>Stadt Wuppertal - Forsten</title>
@@ -67,7 +67,16 @@
         
             <h4>getting started:</h4>
                 <p>Makiere den Standort eines Baumes durch klicken auf die Karte</p>
-					 <h4>Kartenfunktionen</h4>
+                     <h4>Kartenfunktionen</h4>
+                <form class="form-inline">
+                <label>Geometry type &nbsp;</label>
+                <select id="type">
+                    <option value="Point">Point</option>
+                    <option value="LineString">LineString</option>
+                    <option value="Polygon">Polygon</option>
+                    <option value="Circle">Circle</option>
+                </select>
+                </form>
                 <div id='Radius'>
                         <p>Radius: <select id="radius">
                             <option value="0.1">~11 km</option>
