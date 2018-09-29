@@ -1,5 +1,5 @@
 from flask import Flask, render_template, Response, jsonify
-from db_conn import insert_into_db, resetMap
+from db_conn import insert_into_db, reset_map, select_table
 import json
 
 app = Flask(__name__)
@@ -19,12 +19,11 @@ def savePoint(lat, lng, radius):
     sub = insert_into_db("ttt.insert_data", (lat,lng,radius))
     return jsonify("data submitted!")
 
-#@app.route("/reset/")
-#def reset():
-#    res = {"id":"99"}
-#    res = ["What am", "I doing?"]
-#    res = resetMap()
-#    return Response(json.dumps(res), mimetype = "application/json")   
+@app.route("/getData/")
+def getData():
+    dat = select_table()
+    return Response(json.dumps(dat), mimetype = "application/json")
+    return "data loaded!"
 
 @app.route("/reset/")
 def reset():
@@ -34,5 +33,5 @@ def reset():
 #    return Response(json.dumps(res), mimetype = "application/json")
 
 if __name__ == "__main__":
-#   app.run(debug = True)
+    app.run(debug = True)
     app.run(host='0.0.0.0', port=80)
