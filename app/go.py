@@ -28,7 +28,7 @@ def getData():
 @app.route("/reset/")
 def reset():
     res = {"id":"3"}
-    res = resetMap()
+    res = reset_map()
     return jsonify("map reseted!")
 #    return Response(json.dumps(res), mimetype = "application/json")
 
