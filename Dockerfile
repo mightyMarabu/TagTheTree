@@ -14,8 +14,7 @@ WORKDIR /app
 #RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip install --upgrade pip
 RUN pip install flask
-#RUN pip install psycopg2-binary
-RUN pip install psycopg2
+RUN pip install psycopg2-binary
 
 RUN git clone https://github.com/mightyMarabu/TagTheTree.git
 
