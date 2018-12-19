@@ -1,4 +1,5 @@
 # routing functions:
+## alphashapes
 ```sql
 CREATE OR REPLACE FUNCTION belgium.create_area(
 	)
@@ -9,7 +10,7 @@ CREATE OR REPLACE FUNCTION belgium.create_area(
     VOLATILE 
 AS $BODY$
 
---delete from belgium.matrixresult;
+--delete from belgium.arearesult;
 
 DECLARE target RECORD;
 BEGIN
@@ -51,6 +52,10 @@ BEGIN
    
 
 $BODY$;
+
+```
+## matrix based on area centroids
+```sql
 
 CREATE OR REPLACE FUNCTION belgium.create_matrix(
 	)
@@ -131,6 +136,9 @@ END
 
 $BODY$;
 
+```
+## gravitation model
+```sql
 
 CREATE OR REPLACE FUNCTION belgium.gravitation(
 	)
@@ -168,11 +176,23 @@ inner join
 on s.id = n.startid;
 
 $BODY$;
-
-
+```
+## travelling sales person:
+```sql
+--create table belgium.lineresult as
+delete from belgium.lineresult;
+insert into belgium.lineresult (line, total_cost)
+with tsp as 
+(
+select tsp.*, g.geom
+from pgr_tsp('select id, x, y from belgium.rawdata', 5, 10) as tsp
+inner join belgium.rawdata as g on tsp.id1 = g.id
+)
+select st_makeline(geom order by seq) as line, sum(cost) as total_cost
+from tsp
 
 ```
-#app functions:
+# app functions:
 ```sql
 
 CREATE OR REPLACE FUNCTION belgium.insert_rawdata(
