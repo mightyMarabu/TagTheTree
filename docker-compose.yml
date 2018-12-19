@@ -1,0 +1,25 @@
+#maintainer: Sebastian Schmidt
+version: '3'
+services:
+  app:
+    image: mightymarabu/tagthetree_crow:latest
+    ports:
+     - "8000:80"
+  geoserver:
+    image: oscarfonts/geoserver
+    ports:
+     - "8181:8080"
+    volumes: 
+     - gs_data
+  postgres:
+    image: starefossen/pgrouting:latest
+    ports:
+     - "54321:5432"
+    volumes:
+     - pg_data
+
+#volumes:
+#  gs_data:
+#  pg_data:
+   
+
